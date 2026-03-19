@@ -2,7 +2,7 @@ name: تشغيل السكريبت اليومي
 
 on:
   schedule:
-    - cron: '30 2 * * *'   # الوقت الذي تريده
+    - cron: '30 2 * * *'   # يمكنك تغيير الوقت هنا
   workflow_dispatch:
 
 jobs:
@@ -10,14 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - uses: actions/setup-python@v5
-      
         with:
           python-version: '3.x'
-      - 
-      run: python main.py   # تأكد أن اسم الملف مطابق
-
-
-
-      
+      - name: تشغيل الكود
+        run: python main.py   # غير script.py إلى اسم ملفك الحقيقي
