@@ -9,9 +9,11 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - name: تشغيل الكود
-        run: python main.py   # غير script.py إلى اسم ملفك الحقيقي
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    - name: تثبيت المكتبات
+      run: pip install pandas
+    - name: تشغيل الكود
+      run: python main.py   # تأكد من اسم ملفك (هنا main.py)
